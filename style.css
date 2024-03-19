@@ -1,0 +1,246 @@
+/* geral */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+    --color-base-white: #ffffff;
+    --background-color-blue: #F4FCFF;
+    --color-base-blue-100: #387E96;
+    --color-base-blue-300: #065E7C;
+    --color-base-gray-700: #121214;
+    --color-base-gray-900: #202024;
+
+    --like-image: url(./imgs/icon-like.svg);
+    --deslike-image: url(./imgs/icon-deslike.svg);
+}
+
+body {
+    font-family: "Mulish", sans-serif;
+    background-color: var(--background-color-blue);
+}
+
+#container {
+    display: grid;
+    height: 100vh;
+    /* grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 2fr 1fr; */
+    grid-template-areas:
+    "A"
+    "B"
+    "C"
+    "D";
+}
+
+/* nav */
+
+nav {
+    grid-area: "A";
+
+    background-color: var(--color-base-blue-300);
+
+    display: flex;
+    align-items: center;
+    gap: 2.6rem;
+    padding: 1.6rem 2.7rem;
+}
+
+#img-photo {
+    object-fit: cover;
+}
+
+/* nav input search form */
+
+nav form {
+    flex: 1;
+}
+
+.input-wrapper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input-wrapper input {
+    font-family: "Mulish", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 100%;
+    color: var(--color-base-white);
+
+    background-color: var(--color-base-blue-100);
+
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    border: none;
+    border-radius: 4px;
+}
+
+.input-wrapper input::placeholder {
+    color: var(--color-base-white);
+}
+
+/* main */
+
+main {
+    grid-area: "B";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#photo-cat {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.main-text-wrapper {
+    padding: 3.0rem 2.0rem;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 160%;
+    color: var(--color-base-gray-900);
+    
+    margin-bottom: 8px;
+}
+
+#like {
+    width: 4.0rem;
+    height: 4.0rem;
+    border-radius: 50%;
+    background-color: var(--color-base-blue-300);
+    background-image: var(--like-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+
+#deslike {
+    width: 4.0rem;
+    height: 4.0rem;
+    border-radius: 50%;
+    background-color: var(--color-base-blue-300);
+    background-image: var(--deslike-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+
+button + button {
+    margin-left: 1.2rem;
+}
+
+main p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-base-gray-700);
+
+    margin-top: 3.0rem;
+}
+
+/* aside */
+
+aside {
+    grid-area: "C";
+    padding: 0 2.0rem 3.0rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 160%;
+    color: var(--color-base-gray-900);
+}
+
+.card {
+    display: flex;
+    gap: 1.6rem
+}
+
+aside img{
+    aspect-ratio: 16/9;
+    border: 8px;
+}
+
+.text-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 160%;
+    color: var(--color-base-gray-900);
+}
+
+.text-card p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-base-gray-700);
+}
+
+/* footer */
+
+footer {
+    grid-area: "D";
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 100%;
+    color: var(--color-base-white);
+
+    text-align: center;
+
+    background-color: var(--color-base-blue-300);
+
+    padding: 1.6rem;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 1020px) {
+
+    #container {
+        display: grid;
+        height: 100vh;
+        /* grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr); */
+        grid-template-areas:
+        "A A A"
+        "B B C"
+        "B B C"
+        "D D D";
+    }
+    
+    nav {
+        border: 1px solid red;
+        grid-area: A;
+    }
+    
+    main {
+        border: 1px solid red;
+        grid-area: B;
+    }
+    
+    aside {
+        border: 1px solid red;
+        grid-area: C;
+    }
+    
+    footer {
+        border: 1px solid red;
+        grid-area: D;
+    }
+
+}
