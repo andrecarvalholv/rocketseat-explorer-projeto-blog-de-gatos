@@ -209,7 +209,7 @@ footer {
 
 /* media queries */
 
-@media only screen and (min-width: 1020px) {
+@media only screen and (min-width: 1240px) {
 
     #container {
         display: grid;
@@ -224,22 +224,34 @@ footer {
     }
     
     nav {
-        border: 1px solid red;
         grid-area: A;
+        padding-inline: 11.2rem;
     }
     
     main {
-        border: 1px solid red;
         grid-area: B;
+        padding-top: 4.4rem ;
+        padding-left: 11.2rem ;
+    }
+
+    #photo-cat {
+        border-radius: 8px;
+    }
+
+    .main-text-wrapper {
+        padding: 3.0rem 0;
     }
     
     aside {
-        border: 1px solid red;
         grid-area: C;
+        padding: 4.4rem 11.2rem 3.0rem 3.6rem;
+    }
+
+    aside h2 {
+        line-height: 100%;
     }
     
     footer {
-        border: 1px solid red;
         grid-area: D;
     }
 
